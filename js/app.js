@@ -18,17 +18,15 @@ function adicionar() {
     let preco = quantidade * valorUnitario;
     let carrinho = document.getElementById('lista-produtos');
 
-    // adicionar no carrinho (corrigido: template string com crase ``)
+    // adicionar no carrinho 
     carrinho.innerHTML = carrinho.innerHTML + `<section class="carrinho__produtos__produto">
         <span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">R$${preco.toFixed(2)}</span>
     </section>`;
 
-    // atualizar o valor total (corrigido: template string + fix decimal)
+    // atualizar o valor total 
     totalGeral = totalGeral + preco;
     let campoTotal = document.getElementById('valor-total');
     campoTotal.textContent = `R$ ${totalGeral.toFixed(2)}`;
-
-    // corrigido: getElementById escrito errado
     document.getElementById('quantidade').value = 0;
 }
 
